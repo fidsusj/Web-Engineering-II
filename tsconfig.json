@@ -6,7 +6,10 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es6",
-    "types": ["node"],
+    "types": ["node", "jest"],
+    "typeRoots": [
+      "node_modules/@types"
+    ],
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",

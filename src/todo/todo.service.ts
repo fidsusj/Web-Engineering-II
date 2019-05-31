@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Todo } from '../todo';
+import { Todo } from './todo';
 
 let todoId = 0;
 
