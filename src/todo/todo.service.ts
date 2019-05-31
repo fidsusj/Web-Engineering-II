@@ -6,17 +6,19 @@ let todoId = 0;
 @Injectable()
 export class TodoService {
 
+  private store: Map<number, Todo> = new Map<number, Todo>();
+
   add(todo: Todo): Todo {
     todo.id = todoId++;
-    this.store.put(todo.id, todo);
+    this.store.set(todo.id, todo);
     return todo;
   }
 
-  public get(id: number): Todo {
+  get(id: number): Todo {
     return this.store.get(id);
   }
 
-  public getAll(): Todo[] {
+  getAll(): Todo[] {
     return Array.from(this.store.values());
   }
 
@@ -27,7 +29,5 @@ export class TodoService {
   update(id: number, todo: Todo): void {
     this.store.set(id, todo);
   }
-
-  private store: new Map<number, Todo>();
 
 }
