@@ -1,4 +1,4 @@
-import { ConflictException, Controller, Get, HttpException, HttpStatus, Param, Post } from '@nestjs/common';
+import { Controller, Get, HttpException, HttpStatus, Param, Post } from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller('greet')
@@ -12,7 +12,7 @@ export class AppController {
 
   @Post(':name')
   getException(@Param('name') name): never {
-    //throw new ConflictException();
+    // throw new ConflictException();
     throw new HttpException({text: 'Something went wrong'}, HttpStatus.CONFLICT);
   }
 }

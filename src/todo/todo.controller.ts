@@ -33,6 +33,7 @@ export class TodoController {
   @Put(':id')
   @HttpCode(HttpStatus.NO_CONTENT)
   public updateTodo(@Param('id') id: string, @Body('name') name: string, @Body('done') done: boolean): void {
+    // parse text to number with +
     this.todoService.update(+id, new Todo(name, done, +id));
   }
 
